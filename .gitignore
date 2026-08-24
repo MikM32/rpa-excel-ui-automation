@@ -163,4 +163,3 @@ cython_debug/
 
 # RPA artifacts
 @AutomationLog.txt
-.data/output/
