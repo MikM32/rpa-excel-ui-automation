@@ -10,6 +10,15 @@ requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "MIT"}
 
+[dependency-groups]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: pruebas que requieren una instancia real de Excel clasico (RUN_EXCEL_INTEGRATION=1)",
+]
+
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
