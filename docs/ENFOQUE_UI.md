@@ -66,6 +66,37 @@ El comportamiento de los atajos **difiere segun la version de Excel**:
    Nota: en el codigo, el patron del boton de reemplazo conserva la tilde del
    texto real del boton en la UI en espanol.
 
+### Nombres de los elementos en espanol
+
+Con Excel en espanol, los nombres que el bot localiza (por `ClassName`,
+`AutomationId` o `RegexName`) son:
+
+| Elemento | Ingles (probado) | Espanol |
+|---|---|---|
+| Dialogo de apertura | `Open` | `Abrir` |
+| Dialogo de guardado | `Save As` | `Guardar como` |
+| Confirmacion de sobreescritura | `Confirm Save As` | `Confirmar guardar como` |
+| Boton abrir (SplitButton aid 1) | `Open` | `Abrir` |
+| Boton guardar (aid 1) | `Save` | `Guardar` |
+| Boton confirmar reemplazo | `Yes` | `Si` (el texto real lleva tilde) |
+| Boton cancelar (aid 2) | `Cancel` | `Cancelar` |
+| Boton Browse del Backstage | `Browse` | `Examinar` |
+| Plantilla de libro en blanco | `Blank workbook` | `Libro en blanco` |
+| Caja de busqueda del Backstage | `Search for a file` | `Buscar un archivo` |
+| Campo de nombre de archivo | `File name:` | `Nombre de archivo:` |
+| Campo tipo de archivo | `Files of type:` | `Tipo de archivos:` |
+| Pantalla de inicio de Excel | `Excel` | `Excel` (igual) |
+| Libro nuevo | `Book1 - Excel` | `Libro1 - Excel` |
+
+Notas:
+- `AutomationId` es estable e igual en ambos idiomas (p. ej. el campo de nombre
+  `Edit` `1148` en "Abrir" y `1001` en "Guardar como", o el boton `1`).
+- El nombre de archivo en el titulo de la ventana no se traduce (p. ej.
+  `origen.xlsx - Excel`).
+- El boton `Si` se muestra con tilde en la UI real; en la prosa de este
+  documento se escribe sin tilde por convencion, y en el codigo el patron
+  `^(Si|Yes)$` conserva la tilde para igualar el texto real.
+
 ### Advertencias
 
 - **Excel 365 (Backstage)**: los selectores `NetUI*` del Backstage pueden
